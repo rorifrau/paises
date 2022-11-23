@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter  } from '@angular/core';
 import { Country } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';
 
@@ -7,6 +7,8 @@ import { PaisService } from '../../services/pais.service';
   templateUrl: './por-pais.component.html',
   styles: []
 })
+
+
 export class PorPaisComponent  {
 
   termino: string = '';
@@ -20,11 +22,13 @@ export class PorPaisComponent  {
     ) { }
 
 
-buscar(){
+    
+
+buscar(termino: string){
   
   this.hayError=false;
-  this.paisService.buscarPais(this.termino).
-  
+  this.termino = termino;
+  this.paisService.buscarPais(termino).  
   subscribe( (resp) => {
       console.log (resp);      
       this.paises = resp;
@@ -34,6 +38,12 @@ buscar(){
       this.paises = [];
       this.hayError=true;
     });
+}
+
+sugererencia(termino: string){
+  console.log(termino);
+  this.hayError = false;
+  // crear sugerencias 
 }
 
 }
