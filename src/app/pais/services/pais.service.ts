@@ -21,4 +21,25 @@ export class PaisService {
 
   }
 
+  // buscar(termino: string): Country[]{
+      
+  //   let paises: Country[];
+
+  //   this.buscarPais(termino).
+    
+  //   subscribe( (resp) => {
+  //       console.log (resp);      
+        
+  //       paises = resp;
+  //     }, 
+  //     (err) =>{
+  //       console.log ("Error", err);
+  //       paises = [];
+        
+  //     });
+
+  //     return paises;
+  // }
+
+
 }
